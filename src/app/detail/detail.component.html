@@ -1,0 +1,29 @@
+<app-home></app-home>
+<div class="container">
+    <!-- http://media.otstatic.com/img/pattern-bg-80084d9a5c77cee4616369448629dcbf.png -->
+    <div class="row">
+        <div class="col-md-6">
+            <img [src]="restaurante.image_url" alt="">
+        </div>
+        <div class="col-md-6">
+            <div class="row title">
+               <h1> {{restaurante.name}} </h1>
+            </div>
+            <div class="row description">
+                    <p>Contemporary American Fine Dining in a rustic yet elegant environment. 
+                        Innovative and progressive thinking in a farm to table approach, only working 
+                        with the highest quality ingredients. This warm environment offers the best food
+                         and wine with excellent service. Wine Spectator Award of Excellence. Private 
+                         dining room adjacent to the wine cellar available for events</p>
+                </div>
+            <div class="row direct">
+                {{restaurante.address}} <br>
+                {{restaurante.phone}}
+            </div>
+            <div class="row">
+                    <a [href]="restaurante.reserve_url" type="button" class="btn btn-secondary btn-lg">Reserve</a>
+            </div>
+        </div>
+    </div>
+    <div id="map" class="map"></div>
+</div>

@@ -1,0 +1,40 @@
+<div class="containe">
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark row">
+        <div class="col-md-6">
+        <a class="navbar-brand" href="#"><h2>Elije tu Ciudad</h2></a>
+    </div>    
+    <div class="col-md-4">
+        <select class="form-control" name="city" [(ngModel)]="city">
+            <option *ngFor="let city of citys.cities" >{{city}}</option>
+        </select>
+    </div>   
+        <div class="col-md-2">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="button" (click)="solicitar() " routerLink="/home">Search</button>
+        </div>
+        
+    </nav>
+    
+    <div class="baner">
+        <img src="http://media.otstatic.com/img/pattern-bg-80084d9a5c77cee4616369448629dcbf.png" alt="">
+    </div>
+    
+    
+    <div class="container">
+        
+        <div class="row">
+            <div class="cityContainer col-md-3" *ngFor="let datos of restaurante.restaurants">
+                <div class="card" style="width: 18rem;">
+                        <img [src]="datos.image_url" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">{{datos.name}}</h5>
+                            <p class="card-text">City: {{datos.city}}</p>
+                            <a href="#" class="btn btn-primary" routerLink="/detail" (click)="send(datos)" >Ver Mas</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+
+    </div>
